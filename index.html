@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" href="./style.css">   
+
+<style>
+    body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#222;
+}
+
+/* Section */
+.films-section{
+    padding:60px 10%;
+    background:#f9f9f9;
+    text-align:center;
+}
+
+/* Heading */
+.films-section h2{
+    font-size:32px;
+    margin-bottom:40px;
+    color:#222;
+}
+
+/* Grid */
+.films-container{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:25px;
+}
+
+/* Video Card */
+.film-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.film-card:hover{
+    transform:translateY(-8px);
+}
+
+/* Video */
+.film-card iframe{
+    width:100%;
+    height:200px;
+    border:none;
+}
+
+/* Title */
+.film-card h3{
+    padding:15px;
+    font-size:16px;
+    color:#333;
+}
+
+/* Responsive */
+@media(max-width:992px){
+    .films-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .films-container{
+        grid-template-columns:1fr;
+    }
+}
+/* Container Section */
+.container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:60px 10%;
+    background:#f5f5f5;
+    flex-wrap:wrap;
+}
+
+/* Left Text */
+.text{
+    flex:1;
+    min-width:300px;
+}
+
+.text h1{
+    font-size:42px;
+    margin-bottom:20px;
+    color:#222;
+}
+
+.text p{
+    font-size:18px;
+    color:#555;
+    line-height:1.6;
+}
+
+/* Right Image */
+.image{
+    flex:1;
+    text-align:center;
+    min-width:300px;
+}
+
+.image img{
+    width:350px;
+    max-width:100%;
+    border-radius:20px;
+    border:6px solid #fff;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.image img:hover{
+    transform:scale(1.05);
+}
+/* Slider Container */
+.slider-container{
+    width:100%;
+    overflow:hidden;
+    background:#111;
+    padding:40px 0;
+}
+
+/* Slider Track */
+.slider{
+    display:flex;
+    width:max-content;
+    animation:slide 20s linear infinite;
+}
+
+/* Images */
+.slide{
+    min-width:300px;
+    margin:0 15px;
+}
+/* Portfolio Section */
+.portfolio-section{
+    background:#111;
+    color:#fff;
+    padding:70px 10%;
+    text-align:center;
+}
+
+/* Container */
+.portfolio-container{
+    max-width:700px;
+    margin:auto;
+}
+
+/* Heading */
+.portfolio-container h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+/* Text */
+.portfolio-container p{
+    font-size:18px;
+    color:#ccc;
+    margin-bottom:30px;
+}
+
+/* Button */
+.download-btn{
+    text-decoration:none;
+    background:#f39c12;
+    color:#fff;
+    padding:12px 30px;
+    border-radius:30px;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.download-btn:hover{
+    background:#e67e22;
+}
+
+.slide img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:15px;
+    border:4px solid #fff;
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Infinite Scroll Animation */
+@keyframes slide{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .text h1{
+        font-size:32px;
+    }
+
+    .image{
+        margin-top:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <!-- Mobile Icon -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- Center Menu -->
+   <div class="nav-center" id="navMenu">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./My_Work.html">Work</a></li>
+            <li><a href="./about.html">About Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Right Side Call Button -->
+    <div class="call-btn">
+        <a href="tel:7795466320">Call Me</a>
+    </div>
+
+</nav>
+<section class="container">
+
+    <!-- Left Side Text -->
+    <div class="text">
+        <h1>I am an Aspiring Actor</h1>
+        <p>
+            Passionate about storytelling and performance, I am on a journey to bring characters to life on screen.
+            With dedication and creativity, I aim to grow and make a mark in the film industry.
+        </p>
+    </div>
+
+    <!-- Right Side Image -->
+    <div class="image">
+        <img src="./DSC09153.jpg" alt="Actor Image">
+    </div>
+
+</section>
+<section class="slider-container">
+
+    <div class="slider" id="slider">
+
+        <!-- Original Images -->
+        <div class="slide"><img src="./DSC04119.jpeg"></div>
+        <div class="slide"><img src="./DSC04137.jpeg"></div>
+        <div class="slide"><img src="./DSC04124.jpeg"></div>
+        <div class="slide"><img src="./DSC04127.jpeg"></div>
+        <div class="slide"><img src="./DSC04129.jpeg"></div>
+
+        <!-- Duplicate for infinite effect -->
+        <div class="slide"><img src="./DSC04131.jpeg"></div>
+        <div class="slide"><img src="./DSC04134.jpeg"></div>
+        <div class="slide"><img src="./DSC04137.jpeg"></div>
+        <div class="slide"><img src="./IMG_1430.jpg"></div>
+        <div class="slide"><img src="./DSC09156.jpg"></div>
+
+    </div>
+
+</section>
+
+<section class="films-section">
+
+    <h2>My Short Films</h2>
+
+    <div class="films-container">
+
+        <!-- Film 1 -->
+        <div class="film-card">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <h3>Emotional Short Film</h3>
+        </div>
+
+        <!-- Film 2 -->
+        <div class="film-card">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <h3>Action Scene Performance</h3>
+        </div>
+
+        <!-- Film 3 -->
+        <div class="film-card">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <h3>Romantic Short Film</h3>
+        </div>
+
+    </div>
+
+</section>
+<!-- PORTFOLIO DOWNLOAD SECTION -->
+<section class="portfolio-section">
+
+    <div class="portfolio-container">
+
+        <h2>My Portfolio</h2>
+        <p>
+            Download my acting portfolio to explore my work, experience, and performances.
+        </p>
+
+        <!-- Download Button -->
+        <a href="https://drive.google.com/your-file-link" target="_blank" class="download-btn">
+            Download Portfolio
+        </a>
+
+    </div>
+
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-box">
+            <h3>About Me</h3>
+            <p>
+                I am an aspiring actor passionate about storytelling and performance.
+                Exploring opportunities in films, short films, and digital media.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./My_Work.html">Work</a></li>
+                <li><a href="./about.html">About Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>Email: dilipkumar007nani@gmail.com</p>
+            <p>Phone: +91 7795466320</p>
+            <p>Location: Hyderabad, Telangana</p>
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+        <p>© 2026 All Rights Reserved | Dilip Kumar Kolli</p>
+    </div>
+
+</footer>
+<script>
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
+</body>
+</html>

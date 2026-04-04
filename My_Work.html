@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mywork</title>
+<link rel="stylesheet" href="./style.css">  
+    <style>
+/* Common Section */
+.section{
+    padding:60px 10%;
+    text-align:center;
+}
+
+.section h2{
+    margin-bottom:30px;
+    font-size:30px;
+}
+
+/* Fade Animation */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* 🎬 Films */
+.films-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.film-card{
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.film-card iframe{
+    width:100%;
+    height:200px;
+}
+
+.film-card h3{
+    padding:10px;
+}
+
+/* 📸 Gallery */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* 📄 Portfolio */
+.portfolio{
+    background:#111;
+    color:#fff;
+    padding:60px 10%;
+}
+
+.download-btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#f39c12;
+    color:#fff;
+    padding:12px 30px;
+    border-radius:30px;
+    text-decoration:none;
+}
+
+/* Responsive */
+@media(max-width:992px){
+    .films-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .films-container{
+        grid-template-columns:1fr;
+    }
+    .gallery{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+
+    <!-- Mobile Icon -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- Center Menu -->
+    <div class="nav-center" id="navMenu">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./My_Work.html">Work</a></li>
+            <li><a href="./about.html">About Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Right Side Call Button -->
+    <div class="call-btn">
+        <a href="tel:7795466320">Call Me</a>
+    </div>
+
+</nav>
+
+<!-- 🎬 Short Films -->
+<section class="section fade">
+    <h2>My Short Films</h2>
+
+    <div class="films-container">
+
+        <div class="film-card">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <h3>Short Film 1</h3>
+        </div>
+
+        <div class="film-card">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <h3>Short Film 2</h3>
+        </div>
+
+        <div class="film-card">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <h3>Short Film 3</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- 📸 Gallery -->
+<section class="section fade" style="background:#f5f5f5;">
+    <h2>Gallery</h2>
+
+    <div class="gallery">
+        <img src="./DSC09156.jpg">
+        <img src="./DSC04119.jpeg">
+        <img src="./DSC04131.jpeg">
+        <img src="./IMG_1412.jpg">
+     </div>
+</section>
+
+<!-- 📄 Portfolio -->
+<section class="portfolio fade">
+    <h2>My Portfolio</h2>
+    <p>Download my portfolio to know more about my work and experience.</p>
+
+    <a href="https://drive.google.com/your-link" target="_blank" class="download-btn">
+        Download Portfolio
+    </a>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-box">
+            <h3>About Me</h3>
+            <p>
+                I am an aspiring actor passionate about storytelling and performance.
+                Exploring opportunities in films, short films, and digital media.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./My_Work.html">Work</a></li>
+            <li><a href="./about.html">About Us</a></li>
+        </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>Email: dilipkumar007nani@gmail.com</p>
+            <p>Phone: +91 7795466320</p>
+            <p>Location: Hyderabad, Telangana</p>
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+        <p>© 2026 All Rights Reserved | Dilip Kumar Kolli</p>
+    </div>
+
+</footer>
+<script>
+// Scroll Animation
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    fades.forEach(fade => {
+        const top = fade.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            fade.classList.add('show');
+        }
+    });
+});
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
+</body>
+</html>

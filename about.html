@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+<link rel="stylesheet" href="./style.css">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f5f5;
+}
+
+/* Section */
+.about-section{
+    padding:60px 10%;
+    text-align:center;
+}
+
+/* Fade Animation */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Profile Image */
+.about-image img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #fff;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    margin-bottom:25px;
+}
+
+/* Heading */
+.about-section h1{
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+/* Paragraphs */
+.about-text{
+    max-width:800px;
+    margin:auto;
+    text-align:justify;
+}
+
+.about-text p{
+    font-size:17px;
+    line-height:1.8;
+    color:#444;
+    margin-bottom:18px;
+}
+
+/* 🎭 Casting Profile */
+.profile-box{
+    max-width:800px;
+    margin:40px auto;
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.profile-box h2{
+    margin-bottom:20px;
+}
+
+.profile-details{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    text-align:left;
+}
+
+.profile-details div{
+    background:#f5f5f5;
+    padding:10px;
+    border-radius:8px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .about-text{
+        text-align:center;
+    }
+
+    .profile-details{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+    <nav class="navbar">
+
+    <!-- Mobile Icon -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- Center Menu -->
+    <div class="nav-center" id="navMenu">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./My_Work.html">Work</a></li>
+            <li><a href="./about.html">About Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Right Side Call Button -->
+    <div class="call-btn">
+        <a href="tel:7795466320">Call Me</a>
+    </div>
+
+</nav>
+
+<section class="about-section">
+
+    <!-- Image -->
+    <div class="about-image fade">
+        <img src="./DSC09153.jpg" alt="Actor Image">
+    </div>
+
+    <!-- Heading -->
+    <h1 class="fade">About Me</h1>
+
+    <!-- Paragraphs -->
+    <div class="about-text fade">
+        <p>
+            I am an aspiring actor with a deep passion for cinema and storytelling. Acting is not just a profession for me, but a journey of expressing emotions, connecting with people, and bringing characters to life on screen.
+        </p>
+
+        <p>
+            Over the years, I have worked on short films and creative projects that helped me understand the nuances of performance, dialogue delivery, and screen presence. Every role I take is an opportunity to learn and grow.
+        </p>
+
+        <p>
+            I continuously invest time in improving my skills through practice, observation, and collaboration with talented individuals in the industry. My goal is to develop versatility and adapt to different roles with confidence.
+        </p>
+
+        <p>
+            I believe that consistency, dedication, and passion are the key factors that shape a successful acting career. I am committed to pushing my limits and exploring new opportunities in films and digital media.
+        </p>
+
+        <p>
+            I aim to create impactful performances that resonate with audiences and leave a lasting impression.
+        </p>
+    </div>
+
+    <!-- 🎭 Casting Profile -->
+    <div class="profile-box fade">
+        <h2>Casting Profile</h2>
+
+        <div class="profile-details">
+            <div><strong>Age:</strong> 26</div>
+            <div><strong>Height:</strong> 5.9 ft</div>
+            <div><strong>Languages:</strong> Telugu, English</div>
+            <div><strong>Location:</strong> India</div>
+            <div><strong>Experience:</strong> Short Films</div>
+            <div><strong>Skills:</strong> Acting, Dance, Dialogue</div>
+        </div>
+    </div>
+
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-box">
+            <h3>About Me</h3>
+            <p>
+                I am an aspiring actor passionate about storytelling and performance.
+                Exploring opportunities in films, short films, and digital media.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./My_Work.html">Work</a></li>
+            <li><a href="./about.html">About Us</a></li>
+        </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>Email: dilipkumar007nani@gmail.com</p>
+            <p>Phone: +91 7795466320</p>
+            <p>Location: Hyderabad, Telangana</p>
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+        <p>© 2026 All Rights Reserved | Dilip Kumar Kolli</p>
+    </div>
+
+</footer>
+<script>
+// Scroll Animation
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    fades.forEach(fade => {
+        const top = fade.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            fade.classList.add('show');
+        }
+    });
+});
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
+
+
+
+</body>
+</html>
